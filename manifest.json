@@ -1,15 +1,26 @@
 {
   "manifest_version": 3,
-  "name": "Test d'extension",
+  "author": "Groupe 6 - MMI Bordeaux - Workshop 2025",
+  "name": "IA Blocker - Bloqueur d'outil IA",
+  "short_name": "IA Blocker",
+  "incognito": "spanning",
+  "homepage_url": "https://github.com/Louis3133/IA-Blocker?tab=readme-ov-file",
+  "icons": {
+  "48": "/assets/images/placeholder-icon.png",
+  "96": "/assets/images/placeholder-icon.png"
+  },
+  "options_ui": {
+    "page": "options/options.html"
+  },
   "version": "1.0",
-  "description": "test d'extension web",
+  "description": "IA Blocker est une extension qui permet de bloquer les outils d'IA pour réduire leur utilisation progressivement [à compléter]",
   "permissions": [
     "scripting",
     "activeTab"
   ],
-  "host_permissions": [
-    "*://www.youtube.com/*"
-  ],
+  "action":{
+    "default_popup" : "extension-popup.html"
+  },
   "content_scripts": [
     {
       "matches": [
@@ -17,8 +28,13 @@
         "*://www.perplexity.ai/*",
         "*://gemini.google.com/*"
       ],
-      "js": ["test.js"],
-      "css": ["test.css"]
+      "js": ["/assets/js/test.js"],
+      "css": [
+        "/assets/css/shield.css",
+        "/assets/css/extension-popup.css"
+      ],
+      "match_about_blank": true,
+      "all_frames": true
     }
   ]
 }

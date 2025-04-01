@@ -1,0 +1,9 @@
+.popup-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  background-color: white;
+  min-height: 500px;
+  width: auto;
+  min-width: 380px;
+}
