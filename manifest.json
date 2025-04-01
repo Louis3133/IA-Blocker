@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Test d'extension",
+  "version": "1.0",
+  "description": "test d'extension web",
+  "permissions": [
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://www.youtube.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://chatgpt.com/*",
+        "*://www.perplexity.ai/*",
+        "*://gemini.google.com/*"
+      ],
+      "js": ["test.js"],
+      "css": ["test.css"]
+    }
+  ]
+}
