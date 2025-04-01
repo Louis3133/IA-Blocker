@@ -28,7 +28,7 @@
         "*://www.perplexity.ai/*",
         "*://gemini.google.com/*"
       ],
-      "js": ["/assets/js/test.js"],
+      "js": ["/assets/js/block.js"],
       "css": [
         "/assets/css/shield.css",
         "/assets/css/extension-popup.css"
