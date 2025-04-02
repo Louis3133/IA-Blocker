@@ -6,26 +6,33 @@
   "incognito": "spanning",
   "homepage_url": "https://github.com/Louis3133/IA-Blocker?tab=readme-ov-file",
   "icons": {
-  "48": "/assets/images/placeholder-icon.png",
-  "96": "/assets/images/placeholder-icon.png"
+    "48": "/assets/images/placeholder-icon.png",
+    "96": "/assets/images/placeholder-icon.png"
   },
   "options_ui": {
     "page": "options/options.html"
   },
   "version": "1.0",
-  "description": "IA Blocker est une extension qui permet de bloquer les outils d'IA pour réduire leur utilisation progressivement [à compléter]",
+  "description": "IA Blocker est une extension qui permet de bloquer les outils d'IA pour réduire leur utilisation progressivement.",
   "permissions": [
     "scripting",
-    "activeTab"
+    "activeTab",
+    "tabs"
   ],
-  "action":{
-    "default_popup" : "extension-popup.html"
+  "background": {
+    "service_worker": "/assets/js/background.js"
+  },
+  "action": {
+    "default_popup": "extension-popup.html"
   },
   "content_scripts": [
     {
       "matches": [
         "*://chatgpt.com/*",
         "*://www.perplexity.ai/*",
+        "*://www.midjourney.com/*",
+        "*://github.com/copilot/*",
+        "*://dream.ai/*",
         "*://gemini.google.com/*"
       ],
       "js": ["/assets/js/block.js"],
