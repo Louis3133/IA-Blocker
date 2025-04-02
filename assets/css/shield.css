@@ -1,32 +1,56 @@
 .shield {
-  font-family: 'Courier New', Courier, monospace !important;
-  position: absolute;
-  z-index: 999;
-  right: 0;
-  left: 0;
+  position: fixed;
   top: 0;
-  bottom: 0;
-  background-color: black;
-  color: white !important;
+  left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
+  background: black;
+  color: white;
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  justify-content: center;
+  text-align: center;
+  gap: 15px;
+  font-family: Arial, sans-serif;
+  z-index: 9999;
+}
+
+.progress-container {
+  width: 80%;
+  height: 20px;
+  background: #444;
+  border-radius: 10px;
   overflow: hidden;
-  font-size: 18px !important;
+  margin: 10px 0;
 }
 
-.shield h1 {
-  font-weight: 900 !important;
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: limegreen;
+  transition: width 0.1s linear;
 }
 
-.shield button {
-  width: fit-content;
-  background-color: white;
+button {
+  padding: 10px 20px;
   border: none;
-  border-radius: 8px;
-  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+#unlockButton {
+  background: gray;
+  color: white;
+}
+
+#unlockButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+#closePage {
+  background: red;
+  color: white;
 }
