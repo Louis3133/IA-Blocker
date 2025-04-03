@@ -1,19 +1,20 @@
 {
   "manifest_version": 3,
   "author": "Groupe 6 - MMI Bordeaux - Workshop 2025",
-  "name": "IA Blocker - Bloqueur d'outil IA",
-  "short_name": "IA Blocker",
+  "name": "Axii - Bloqueur d'outil IA",
+  "short_name": "Axii",
   "incognito": "spanning",
   "homepage_url": "https://github.com/Louis3133/IA-Blocker?tab=readme-ov-file",
   "icons": {
-    "48": "/assets/images/placeholder-icon.png",
-    "96": "/assets/images/placeholder-icon.png"
+    "12": "/assets/images/logo-little.png",
+    "48": "/assets/images/logo-big.png",
+    "96": "/assets/images/logo-big.png"
   },
   "options_ui": {
     "page": "options/options.html"
   },
   "version": "1.0",
-  "description": "IA Blocker est une extension qui permet de bloquer les outils d'IA pour réduire leur utilisation progressivement.",
+  "description": "Axii est une extension qui permet de bloquer les outils d'IA pour réduire leur utilisation progressivement.",
   "permissions": [
     "scripting",
     "activeTab",
@@ -30,18 +31,160 @@
       "matches": [
         "*://chatgpt.com/*",
         "*://www.perplexity.ai/*",
-        "*://www.midjourney.com/*",
         "*://github.com/copilot/*",
         "*://dream.ai/*",
-        "*://gemini.google.com/*"
+        "*://gemini.google.com/*",
+
+        "*://www.midjourney.com/*",
+        "*://stablediffusionweb.com/*",
+        "*://firefly.adobe.com/*",
+        "*://preview.reve.art/*",
+        "*://ideogram.ai/*",
+        "*://blackforestlabs.ai/*",
+        "*://leonardo.ai/*",
+        "*://www.recraft.ai/*",
+        "*://dall-e-3/*",
+
+        "*://quillbot.com/*",
+        "*://rytr.me/*",
+        "*://undetectable.ai/*",
+        "*://writesonic.com/*",
+        "*://www.semrush.com/*",
+        "*://smodin.io/*",
+        "*://gptzero.me/*",
+        "*://www.jasper.ai/*",
+        "*://www.hubspot.com/*",
+
+        "*://chatgpt.com/*",
+        "*://grok.com/*",
+        "*://claude.ai/*",
+        "*://gemini.google.com/*",
+        "*://chat.deepseek.com/*",
+        "*://copilot.microsoft.com/*",
+        "*://chat.qwen.ai/*",
+        "*://mistral.ai/*",
+        "*://www.meta.ai/*",
+        "*://pi.ai//*",
+
+        "*://deepmind.google/*",
+        "*://runwayml.com/*",
+        "*://sora.com/*",
+        "*://lumalabs.ai/*",
+        "*://invideo.io/*",
+        "*://copilot.microsoft.com/*",
+        "*://app.klingai.com/*",
+        "*://ltx.studio/*",
+        "*://www.synthesia.io/*",
+        "*://pika.art/*",
+
+        "*://www.perplexity.ai/*",
+        "*://explorer.globe.engineer/*",
+        "*://www.chatpdf.com/*",
+        "*://www.notion.com/*",
+        "*://fireflies.ai/*",
+        "*://quizlet.com/*",
+        "*://askyourpdf.com/*",
+
+        "*://www.shopify.com/magic/*",
+        "*://echo.win/*",
+        "*://www.ecommerceprompts.com/*",
+        "*://waymark.com/*",
+        "*://www.getproduct.help/*",
+        "*://repurpose.io/*",
+        "*://www.naker.io/*",
+        "*://www.benchmarkemail.com/*",
+
+        "*://www.aiapply.co/*",
+        "*://workleap.com/*",
+        "*://jobcopilot.com/*",
+        "*://resumeworded.com/*",
+        "*://geniusreview.xyz/*",
+        "*://www.careerflow.ai/*",
+        "*://www.kickresume.com/*",
+        "*://www.careered.ai/*",
+        "*://resumetrick.com/*",
+        "*://qatalog.com/*",
+
+        "*://www.mailerlite.com/*",
+        "*://www.klaviyo.com/*",
+        "*://www.hoppycopy.com/*",
+        "*://superhuman.com/*",
+        "*://www.getresponse.com/*",
+        "*://www.beehiiv.com/*",
+        "*://www.hubspot.fr/products/marketing/ai-email-writer/*",
+        "*://instantly.ai/*",
+        "*://www.paragraphai.com/*",
+
+        "*://looka.com/*",
+        "*://ideogram.ai/*",
+        "*://www.fiverr.com/logo-maker/*",
+        "*://www.adobe.com/fr/express/create/logo/*",
+        "*://stockimg.ai/*",
+        "*://www.logoai.com/logo-maker/*",
+        "*://logodiffusion.com/*",
+        "*://www.design.com/*",
+        "*://www.insmind.com/ai-logo-generator/*",
+
+        "*://www.framer.com/features/ai/*",
+        "*://durable.co/*",
+        "*://10web.io/*",
+        "*://websim.ai/*",
+        "*://www.hubspot.com/marketing/ai-website-generator-am/*",
+        "*://www.visme.co/*",
+        "*://icons8.com/*",
+        "*://bubble.io/ai/*",
+
+        "*://copilot.microsoft.com/chats/*",
+        "*://layla.ai/*",
+        "*://www.tattoosai.com/*",
+        "*://tripplanner.ai/*",
+        "*://letsfoodie.com/ai-recipe-generator/*",
+        "*://www.beforesunset.ai/*",
+        "*://dreaminterpreter.ai/*",
+
+        "*://www.personal.ai/*",
+        "*://jungleai.com/*",
+        "*://reflect.app/*",
+        "*://www.rewind.ai/*",
+        "*://sanalabs.com/*",
+        "*://www.taskade.com/*",
+        "*://glasp.co/ai-writing/*",
+        "*://memoru.io/*",
+        "*://talknotes.io/*",
+
+        "*://explorer.globe.engineer/*",
+        "*://gptgo.ai/*",
+        "*://www.phind.com/*",
+        "*://scite.ai/*",
+        "*://www.semanticscholar.org/*",
+        "*://getliner.com/*",
+        "*://arc.net/*",
+
+        "*://faceswapper.ai/*",
+        "*://www.dzine.ai/*",
+        "*://vectorizer.ai/*",
+        "*://www.pixelcut.ai/*",
+        "*://magnific.ai/*"
       ],
-      "js": ["/assets/js/block.js"],
+      "js": [
+        "/assets/js/shield.js",
+        "/assets/js/popup.js"
+      ],
       "css": [
         "/assets/css/shield.css",
         "/assets/css/extension-popup.css"
       ],
       "match_about_blank": true,
       "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "shield.html",
+        "assets/images/logo-shield.svg"
+      ],
+      "matches": ["<all_urls>"]
     }
   ]
 }

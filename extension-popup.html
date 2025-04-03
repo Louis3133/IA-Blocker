@@ -4,13 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Test d'extension</title>
-    <script src="block.js"></script>
+    <script src="/assets/js/popup.js"></script>
     <link rel="stylesheet" href="/assets/css/extension-popup.css" />
   </head>
   <body>
     <section class="popup-section">
       <h2>Test de popup</h2>
-      <p>La super extension de malade dit</p>
+      <p>État du blocage : <span id="displayState"></span></p>
+      <img src="/assets/images/logo-shield.svg" alt="">
+
+      <button class="popup-button-state" id="ShieldStateButton">
+        Le bouton
+      </button>
     </section>
   </body>
 </html>
