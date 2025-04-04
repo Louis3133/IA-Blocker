@@ -55,10 +55,17 @@
     const totalTime = 15000;
     const interval = 100;
     let count = totalTime / 1000;
-    secondsRemain.textContent = count;
 
-    setInterval(() => {
+    secondsRemain.textContent = count--;
+
+    const countdown = setInterval(() => {
       secondsRemain.textContent = count--;
+      if (count < 0) {
+        clearInterval(countdown);
+      }
+      if (count == 0) {
+        seconds.textContent = " seconde";
+      }
     }, 1000);
 
     const timer = setInterval(() => {
@@ -85,6 +92,7 @@
       chrome.runtime.sendMessage({ action: "closeTab" });
     });
   }
+
 
   function removeShield() {
     const shield = document.querySelector(".shield");

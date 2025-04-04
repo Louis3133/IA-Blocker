@@ -100,6 +100,10 @@
   cursor: pointer;
 }
 
+#closePage:hover {
+
+}
+
 .unlocked .progress-container .progress-bar {
   background: rgb(0, 0, 0) !important;
 
@@ -171,4 +175,20 @@ button{
 .shield-slider-hint {
   font-weight: 600;
   text-decoration: underline;
+}
+
+.fade-in-down {
+  animation: fade-in-down 5s ease infinite;
+}
+@keyframes fade-in-down {
+  0% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-10px);
+  }
 }
