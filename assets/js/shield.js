@@ -1,34 +1,34 @@
 (function () {
   let shieldState = true;
 
+  const ext = typeof browser !== "undefined" ? browser : chrome;
+
   if (shieldState) {
     displayShield();
   }
 
-  chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  ext.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.action === "shieldStateChanged") {
-      const shieldState = message.state;
+      shieldState = message.state;
       console.log("État du bouclier : ", shieldState);
 
       if (shieldState) {
         displayShield();
       } else {
-
         removeShield();
       }
     }
   });
 
   function displayShield() {
-
     if (document.querySelector(".shield")) return;
 
     const shield = document.createElement("div");
     shield.className = "shield";
 
-    fetch(chrome.runtime.getURL('shield.html'))
-      .then(response => response.text())
-      .then(data => {
+    fetch(ext.runtime.getURL("shield.html"))
+      .then((response) => response.text())
+      .then((data) => {
         shield.innerHTML = data;
         document.body.appendChild(shield);
         document.documentElement.style.overflow = "hidden";
@@ -36,12 +36,15 @@
         const logoPlaceholder = shield.querySelector(".logo-placeholder");
         if (logoPlaceholder) {
           const img = document.createElement("img");
-          img.src = chrome.runtime.getURL("assets/images/logo-shield.svg");
+          img.src = ext.runtime.getURL("assets/images/logo-shield.svg");
           logoPlaceholder.appendChild(img);
         }
 
         setupTimerAndActions(shield);
       })
+      .catch((error) =>
+        console.error("Erreur de chargement du shield :", error)
+      );
   }
 
   function setupTimerAndActions(shield) {
@@ -77,7 +80,7 @@
         clearInterval(timer);
         unlockButton.disabled = false;
         unlockButton.classList.add("unlocked");
-        progressBarText.innerHTML = 'Continuer';
+        progressBarText.innerHTML = "Continuer";
         secondsRemain.style.display = "none";
         seconds.style.display = "none";
       }
@@ -89,10 +92,9 @@
     });
 
     shield.querySelector("#closePage").addEventListener("click", () => {
-      chrome.runtime.sendMessage({ action: "closeTab" });
+      ext.runtime.sendMessage({ action: "closeTab" });
     });
   }
-
 
   function removeShield() {
     const shield = document.querySelector(".shield");

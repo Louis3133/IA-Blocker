@@ -1,19 +1,20 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   let shieldState = true;
   const shieldButton = document.getElementById("ShieldStateButton");
   const state = document.getElementById("displayState");
 
-  shieldButton.addEventListener("click", () => {
-    if (shieldState) {
-      state.textContent = "Désactivé";
-      shieldState = false;
-    } else {
-      state.textContent = "Activé";
-      shieldState = true;
-    }
+  const ext = typeof browser !== "undefined" ? browser : chrome;
 
-    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-      chrome.tabs.sendMessage(tabs[0].id, { action: "shieldStateChanged", state: shieldState });
+  shieldButton.addEventListener("click", () => {
+    shieldState = !shieldState;
+    state.textContent = shieldState ? "Activé" : "Désactivé";
+    ext.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      if (tabs.length > 0 && tabs[0].id) {
+        ext.tabs.sendMessage(tabs[0].id, {
+          action: "shieldStateChanged",
+          state: shieldState,
+        });
+      }
     });
   });
 });
