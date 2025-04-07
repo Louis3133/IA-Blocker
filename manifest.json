@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "author": "Groupe 6 - MMI Bordeaux - Workshop 2025",
-  "name": "Axii - Bloqueur d'outil IA",
-  "short_name": "Axii",
+  "name": "Axi - Bloqueur d'outil IA",
+  "short_name": "Axi",
   "incognito": "spanning",
   "homepage_url": "https://github.com/Louis3133/IA-Blocker?tab=readme-ov-file",
   "icons": {
@@ -10,11 +10,8 @@
     "48": "/assets/images/logo-big.png",
     "96": "/assets/images/logo-big.png"
   },
-  "options_ui": {
-    "page": "options/options.html"
-  },
   "version": "1.0",
-  "description": "Axii est une extension qui permet de bloquer les outils d'IA pour réduire leur utilisation progressivement.",
+  "description": "Axi est une extension qui permet de bloquer les outils d'IA pour réduire leur utilisation progressivement.",
   "permissions": [
     "scripting",
     "activeTab",
@@ -168,10 +165,12 @@
       ],
       "js": [
         "/assets/js/shield.js",
-        "/assets/js/popup.js"
+        "/assets/js/popup.js",
+        "/assets/js/shield-content.js"
       ],
       "css": [
         "/assets/css/shield.css",
+        "/assets/css/shield-button.css",
         "/assets/css/extension-popup.css"
       ],
       "match_about_blank": true,

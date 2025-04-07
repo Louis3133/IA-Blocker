@@ -18,23 +18,6 @@
   z-index: 997;
 }
 
-.buttons-section{
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  align-items: center;
-}
-
-.progress-container {
-  width: 390px;
-  height: 65px;
-  border-radius: 69px;
-  background: rgba(203, 245, 249, 0.50);
-  box-shadow: -13px 11px 73.5px 0px rgba(0, 0, 0, 0.25);
-  overflow: hidden;
-  position: relative;
-}
-
 .shield-slider{
   color: #595757;
   text-align: center;
@@ -47,76 +30,19 @@
   margin-bottom: 64px;
 }
 
-.progress-container-text {
-  position: absolute;
-  right: 0;
-  left: 0;
-  top: 18px;
-  bottom: 0;
-  color: #595757;
-  font-size: 20px;
-  font-family: Montserrat, sans-serif;
-}
-
 .logo-shield-container {
-  height: 260px;
-  width: 390px;
+  height: auto;
+  width: 33%;
 }
 
-.logo-placeholder {
-  aspect-ratio: 390/260;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+#logo-shield img {
+  aspect-ratio: 390/260 !important;
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: cover !important;
 }
 
-.progress-container-text p {
-  margin-bottom: unset;
-}
 
-.progress-bar {
-  height: 100%;
-  width: 0%;
-  background: rgba(152, 202, 202, 0.70);
-  transition: width 0.1s linear;
-}
-
-#unlockButton {
-  color: white;
-}
-
-#unlockButton:disabled {
-  cursor: not-allowed;
-}
-
-#closePage {
-  color: #595757;
-  text-align: center;
-  font-family: Montserrat, sans-serif;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  cursor: pointer;
-}
-
-#closePage:hover {
-
-}
-
-.unlocked .progress-container .progress-bar {
-  background: rgb(0, 0, 0) !important;
-
-}
-
-.unlocked .progress-container #unlockButton {
-  background: rgb(0, 0, 0) !important;
-  cursor: pointer;
-}
-
-.unlocked .progress-container .progress-container-text {
-  color: rgb(255, 255, 255);
-}
 
 .background-top {
   position: absolute;
@@ -138,10 +64,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: 2vh;
 }
 
-button{
+.shield button{
   background: none;
   border: none;
 }
@@ -192,3 +118,42 @@ button{
     transform: translateY(-10px);
   }
 }
+
+@media (max-width: 480px) {
+  .progress-container {
+    width: 80vw;
+  }
+
+  .logo-shield-container {
+    height: auto;
+    width: 50%;
+  }
+
+  .shield-title {
+    font-size: 32px;
+  }
+
+  .shield-content {
+    gap: 6vh;
+  }
+
+  .shield-slider{
+    margin-bottom: 12px;
+    margin-top: 12px;
+    width: 85%;
+  }
+
+  .background-top {
+    position: absolute;
+    top: -60%;
+    left: -60%;
+    z-index: 998;
+  }
+
+  .background-bottom {
+    position: absolute;
+    bottom: -60%;
+    right: -60%;
+    z-index: 998;
+  }
+ }

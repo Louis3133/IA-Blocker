@@ -2,15 +2,11 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  background-color: rgb(0, 0, 0);
+  background: white;
   min-height: 500px;
   width: auto;
-  min-width: 380px;
   color: white;
-}
-
-body {
-  margin: 0;
+  overflow: hidden;
 }
 
 .popup-button-state {
@@ -19,4 +15,16 @@ body {
   border-radius: 30px;
   background-color: white;
   color: black;
+}
+
+.popup-background-top {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+}
+
+.popup-background-bottom {
+  position: absolute;
+  bottom: -50%;
+  right: -50%;
 }
