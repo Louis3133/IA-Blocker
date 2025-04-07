@@ -1,33 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 .shield {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  align-items: center;
   background: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding-top: 5%;
-  text-align: center;
-  gap: 15px;
   font-family: Arial, sans-serif;
-  z-index: 997;
-}
-
-.shield-slider{
-  color: #595757;
+  gap: 15px;
+  height: 100%;
+  left: 0;
+  padding-top: 5%;
+  position: fixed;
   text-align: center;
-  font-family: Montserrat, sans-serif;
-  font-size: 22px;
-  font-style: normal;
-  line-height: normal;
-  width: 70%;
-  margin-top: 32px;
-  margin-bottom: 64px;
+  top: 0;
+  width: 100%;
+  z-index: 997;
 }
 
 .logo-shield-container {
@@ -38,33 +26,31 @@
 #logo-shield img {
   aspect-ratio: 390/260 !important;
   height: 100% !important;
-  width: 100% !important;
   object-fit: cover !important;
+  width: 100% !important;
 }
 
-
-
 .background-top {
+  left: 0;
   position: absolute;
   top: 0;
-  left: 0;
   z-index: 998;
 }
 
 .background-bottom {
-  position: absolute;
   bottom: -10px;
+  position: absolute;
   right: 0;
   z-index: 998;
 }
 
 .shield-content {
-  position: relative;
-  z-index: 999;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 2vh;
+  position: relative;
+  z-index: 999;
 }
 
 .shield button{
@@ -72,40 +58,10 @@
   border: none;
 }
 
-.shield-title {
-  color: #090617;
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  letter-spacing: -1.92px;
-  width: 90%;
-}
-
-.shield-website {
-  color: #595757;
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: normal;
-  text-decoration-line: underline;
-  position: absolute;
-  bottom: 35px;
-  z-index: 999;
-  opacity: 0.5;
-}
-
-.shield-slider-hint {
-  font-weight: 600;
-  text-decoration: underline;
-}
-
 .fade-in-down {
   animation: fade-in-down 5s ease infinite;
 }
+
 @keyframes fade-in-down {
   0% {
     transform: translateY(-10px);
@@ -119,40 +75,29 @@
   }
 }
 
+/* Responsive mobile du shield  */
+
 @media (max-width: 480px) {
-  .progress-container {
-    width: 80vw;
-  }
 
   .logo-shield-container {
     height: auto;
     width: 50%;
   }
 
-  .shield-title {
-    font-size: 32px;
-  }
-
   .shield-content {
     gap: 6vh;
   }
 
-  .shield-slider{
-    margin-bottom: 12px;
-    margin-top: 12px;
-    width: 85%;
-  }
-
   .background-top {
+    left: -60%;
     position: absolute;
     top: -60%;
-    left: -60%;
     z-index: 998;
   }
 
   .background-bottom {
-    position: absolute;
     bottom: -60%;
+    position: absolute;
     right: -60%;
     z-index: 998;
   }

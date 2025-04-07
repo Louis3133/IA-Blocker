@@ -1,0 +1,19 @@
+.shield-title {
+  color: #090617;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: -1.92px;
+  line-height: normal;
+  text-align: center;
+  width: 90%;
+}
+
+/* Responsive mobile du shield  */
+
+@media (max-width: 480px) {
+  .shield-title {
+    font-size: 32px;
+  }
+ }

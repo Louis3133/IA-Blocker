@@ -1,0 +1,17 @@
+.shield-hint-section {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  gap: 12px;
+  margin-block: 5%;
+}
+
+.shield-hint-title {
+  font-weight: bold;
+}
+
+.shield-hint-link {
+  text-decoration: underline;
+}

@@ -1,4 +1,3 @@
-(function () {
   let shieldState = true;
 
   const ext = typeof browser !== "undefined" ? browser : chrome;
@@ -7,20 +6,7 @@
     displayShield();
   }
 
-  ext.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    if (message.action === "shieldStateChanged") {
-      shieldState = message.state;
-      console.log("État du bouclier : ", shieldState);
-
-      if (shieldState) {
-        displayShield();
-      } else {
-        removeShield();
-      }
-    }
-  });
-
-  function displayShield() {
+  function displayShield() { // fonction qui permet l'affichage du shield en fonction de son état
     if (document.querySelector(".shield")) return;
 
     const shield = document.createElement("div");
@@ -47,60 +33,10 @@
       );
   }
 
-  function setupTimerAndActions(shield) {
-    const unlockButton = shield.querySelector("#unlockButton");
-    const progressBar = shield.querySelector("#progressBar");
-    const progressBarText = shield.querySelector("#progress-text");
-    const secondsRemain = shield.querySelector("#seconds-remain");
-    const seconds = shield.querySelector(".seconds");
-
-    let timeElapsed = 0;
-    const totalTime = 15000;
-    const interval = 100;
-    let count = totalTime / 1000;
-
-    secondsRemain.textContent = count--;
-
-    const countdown = setInterval(() => {
-      secondsRemain.textContent = count--;
-      if (count < 0) {
-        clearInterval(countdown);
-      }
-      if (count == 0) {
-        seconds.textContent = " seconde";
-      }
-    }, 1000);
-
-    const timer = setInterval(() => {
-      timeElapsed += interval;
-      const progress = (timeElapsed / totalTime) * 100;
-      progressBar.style.width = progress + "%";
-
-      if (timeElapsed >= totalTime) {
-        clearInterval(timer);
-        unlockButton.disabled = false;
-        unlockButton.classList.add("unlocked");
-        progressBarText.innerHTML = "Continuer";
-        secondsRemain.style.display = "none";
-        seconds.style.display = "none";
-      }
-    }, interval);
-
-    unlockButton.addEventListener("click", () => {
-      shield.remove();
-      document.documentElement.style.overflow = "";
-    });
-
-    shield.querySelector("#closePage").addEventListener("click", () => {
-      ext.runtime.sendMessage({ action: "closeTab" });
-    });
-  }
-
-  function removeShield() {
+  function removeShield() { // fonction permettant de supprimer le shield
     const shield = document.querySelector(".shield");
     if (shield) {
       shield.remove();
       document.documentElement.style.overflow = "";
     }
   }
-})();

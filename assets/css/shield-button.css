@@ -1,29 +1,29 @@
 .buttons-section{
+  align-items: center;
   display: flex;
   flex-direction: column;
   gap: 24px;
-  align-items: center;
 }
 
 .progress-container {
-  width: 390px;
-  height: 65px;
-  border-radius: 69px;
   background: rgba(203, 245, 249, 0.50);
+  border-radius: 69px;
   box-shadow: -13px 11px 73.5px 0px rgba(0, 0, 0, 0.25);
+  height: 65px;
   overflow: hidden;
   position: relative;
+  width: 390px;
 }
 
 .progress-container-text {
-  position: absolute;
-  right: 0;
-  left: 0;
-  top: 18px;
   bottom: 0;
   color: #595757;
-  font-size: 20px;
   font-family: Montserrat, sans-serif;
+  font-size: 20px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 18px;
 }
 
 .progress-container-text p {
@@ -31,10 +31,10 @@
 }
 
 .progress-bar {
-  height: 100%;
-  width: 0%;
   background: rgba(152, 202, 202, 0.70);
+  height: 100%;
   transition: width 0.1s linear;
+  width: 0%;
 }
 
 #unlockButton {
@@ -47,13 +47,13 @@
 
 #closePage {
   color: #595757;
-  text-align: center;
+  cursor: pointer;
   font-family: Montserrat, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  cursor: pointer;
+  text-align: center;
 }
 
 .unlocked .progress-container .progress-bar {

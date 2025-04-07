@@ -13,8 +13,7 @@
   "version": "1.0",
   "description": "Axi est une extension qui permet de bloquer les outils d'IA pour réduire leur utilisation progressivement.",
   "permissions": [
-    "activeTab",
-    "tabs"
+    "activeTab"
   ],
   "background": {
     "scripts": ["/assets/js/background.js"],
@@ -148,10 +147,15 @@
       ],
       "js": [
         "/assets/js/shield.js",
-        "/assets/js/shield-content.js"
+        "/assets/js/shield-title.js",
+        "/assets/js/shield-hints.js",
+        "/assets/js/shield-timer.js"
       ],
       "css": [
         "/assets/css/shield.css",
+        "/assets/css/shield-title.css",
+        "/assets/css/shield-hints.css",
+        "/assets/css/shield-title.css",
         "/assets/css/shield-button.css"
       ],
       "all_frames": true
