@@ -28,9 +28,6 @@
 
         setupTimerAndActions(shield);
       })
-      .catch((error) =>
-        console.error("Erreur de chargement du shield :", error)
-      );
   }
 
   function removeShield() { // fonction permettant de supprimer le shield

@@ -1,28 +1,25 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "author": "Groupe 6 - MMI Bordeaux - Workshop 2025",
   "name": "Axi - Bloqueur d'outil IA",
   "short_name": "Axi",
-  "incognito": "spanning",
-  "homepage_url": "https://github.com/Louis3133/IA-Blocker?tab=readme-ov-file",
-  "icons": {
-    "12": "/assets/images/logo-little.png",
-    "48": "/assets/images/logo-big.png",
-    "96": "/assets/images/logo-big.png"
-  },
-  "version": "1.0",
   "description": "Axi est une extension qui permet de bloquer les outils d'IA pour réduire leur utilisation progressivement.",
-  "permissions": [
-    "activeTab"
-  ],
-  "background": {
-    "scripts": ["/assets/js/background.js"],
-    "persistent": false
+  "version": "1.0",
+  "homepage_url": "https://github.com/Louis3133/IA-Blocker?tab=readme-ov-file",
+  "incognito": "spanning",
+
+  "icons": {
+    "16": "/assets/images/logo-little.png",
+    "48": "/assets/images/logo-big.png",
+    "128": "/assets/images/logo-big.png"
   },
+
+  "permissions": ["activeTab"],
+
   "content_scripts": [
     {
       "matches": [
-        "*://chatgpt.com/*",
+      "*://chatgpt.com/*",
         "*://www.perplexity.ai/*",
         "*://github.com/copilot/*",
         "*://dream.ai/*",
@@ -31,7 +28,6 @@
         "*://stablediffusionweb.com/*",
         "*://firefly.adobe.com/*",
         "*://preview.reve.art/*",
-        "*://ideogram.ai/*",
         "*://blackforestlabs.ai/*",
         "*://leonardo.ai/*",
         "*://www.recraft.ai/*",
@@ -45,10 +41,8 @@
         "*://gptzero.me/*",
         "*://www.jasper.ai/*",
         "*://www.hubspot.com/*",
-        "*://chatgpt.com/*",
         "*://grok.com/*",
         "*://claude.ai/*",
-        "*://gemini.google.com/*",
         "*://chat.deepseek.com/*",
         "*://copilot.microsoft.com/*",
         "*://chat.qwen.ai/*",
@@ -60,12 +54,10 @@
         "*://sora.com/*",
         "*://lumalabs.ai/*",
         "*://invideo.io/*",
-        "*://copilot.microsoft.com/*",
         "*://app.klingai.com/*",
         "*://ltx.studio/*",
         "*://www.synthesia.io/*",
         "*://pika.art/*",
-        "*://www.perplexity.ai/*",
         "*://explorer.globe.engineer/*",
         "*://www.chatpdf.com/*",
         "*://www.notion.com/*",
@@ -132,7 +124,6 @@
         "*://glasp.co/ai-writing/*",
         "*://memoru.io/*",
         "*://talknotes.io/*",
-        "*://explorer.globe.engineer/*",
         "*://gptgo.ai/*",
         "*://www.phind.com/*",
         "*://scite.ai/*",
@@ -155,14 +146,25 @@
         "/assets/css/shield.css",
         "/assets/css/shield-title.css",
         "/assets/css/shield-hints.css",
-        "/assets/css/shield-title.css",
         "/assets/css/shield-button.css"
       ],
       "all_frames": true
     }
   ],
+
   "web_accessible_resources": [
-    "shield.html",
-    "assets/images/logo-shield.svg"
-  ]
+    {
+      "resources": [
+        "/shield.html",
+        "/assets/images/logo-shield.svg"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{27944c3f-bd14-4a61-808a-5501f558a616}"
+    }
+  }
 }

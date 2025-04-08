@@ -43,8 +43,4 @@ function setupTimerAndActions(shield) { // cette fonction met en place le systè
     shield.remove();
     document.documentElement.style.overflow = "";
   });
-
-  shield.querySelector("#closePage").addEventListener("click", () => { // On ferme la fenêtre si on clique sur "Quiter la page"
-    ext.runtime.sendMessage({ action: "closeTab" });
-  });
 }
