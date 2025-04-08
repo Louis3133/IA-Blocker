@@ -18,11 +18,11 @@ Ce projet est entièrement open-source, tout le monde peut y contribuer, pour fa
 6. Objectifs futurs
 7. À propos de nous
 
-# 1 - Manifest.json
+# 1. Manifest.json
 
 Le fichier manifest.json est le fichier central de toute l’extension, sans lui rien ne peut fonctionner. Il contient toutes les informations concernant l’extension : son nom, sa description, ses permissions, les actions qu’elle réalise.
 
-Pour citer la doc MDN : “Avec manifest.json, on fournit les différentes métadonnées simples de l'extension, comme le nom et la version. On peut également y définir certains aspects des fonctionnalités de l'extension (tels que les scripts d'arrière-plan, les scripts de contenu et les actions du navigateur).” Pour plus d’informations, la doc MDN est complète : https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions/manifest.json
+Pour citer la doc MDN : “Avec manifest.json, on fournit les différentes métadonnées simples de l'extension, comme le nom et la version. On peut également y définir certains aspects des fonctionnalités de l'extension (tels que les scripts d'arrière-plan, les scripts de contenu et les actions du navigateur).” Pour plus d’informations, la doc MDN est complète : [Lien de la doc MDN](https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions/manifest.json)
 
 Ici, il y à une autre chose d’intéressante, c’est la longue liste d’URL présente dans le “content_scripts” dans “matches”, ici on détecte automatiquement quand on se trouve sur une de ces URL, on remarque notamment le schéma suivant sur celles-ci :
 
@@ -32,7 +32,7 @@ ici, on encadre de nom de la page ainsi que son extension de domaine avec des \*
 
 “_://nomDeLaPage.extensionDeDomaine/nomDeLaPagePrécise/_’
 
-# 2 - Shield
+# 2. Shield
 
 On appelle le “Shield” le layout que nous utilisons, c’est l’interface qui se superpose à celle de l’outil d’IA pour bloquer son accès. Pour travailler sur le shield, ce sont les fichiers suivant qui nous intéressent (en plus du manifest.json) :
 
@@ -52,15 +52,15 @@ Pour afficher le layour, la fonction displayshield() crée donc la div et lui in
 
 La fonction setupTimerAndAction() qui prend comme enfant shield permet le fonctionnement du bouton pour désactiver le shield après un certain temps et ce si le shield est bien activé.
 
-C’est ici que se calcule alors la width de la barre de chargement en fonction du temps passé dans l'intervalle. On y affiche aussi les secondes restantes. Cette fonction prend également en compte le deuxième bouton “quitter la page” qui ferme l’onglet actuel si il est cliqué.
+C’est ici que se calcule alors la width de la barre de chargement en fonction du temps passé dans l'intervalle. On y affiche aussi les secondes restantes. Cette fonction prend également en compte le deuxième bouton “quitter la page” qui ferme l’onglet actuel s'il est cliqué.
 
-# 3 - Popup
+# 3. Popup
 
 Dans le fichier popup.js, on y met tout ce qui permet le fonctionnement des éléments de la popup.
 
 extension-popup.html contient tout le front de la popup, avec évidemment le fichier css qui l'accompagne extension-popup.css
 
-# 4 - Le CSS
+# 4. Le CSS
 
 Pour afficher une UI propre, on utilise donc les fichiers CSS suivant :
 
@@ -72,11 +72,11 @@ Ce qui est très important sur cette extension, c’est de bien cibler correctem
 
 Pour cela, il faut essayer de cibler au maximum avec des successions de classes nos éléments, on n’applique pas du css sur des balises directement et dans des cas extrêmes on cible avec les ID directement (dans les derniers recours on utilise !important, mais il vaut mieux essayer de rester le plus propre possible).
 
-# 5 - Multi-navigateurs
+# 5. Multi-navigateurs
 
 Afin d’assurer une compatibilité maximale entre différents navigateurs (Firefox, Chrome, Edge…), nous utilisons la librairie webextension-polyfill de Mozilla.
 
-Référence : https://github.com/mozilla/webextension-polyfill
+Référence : [Lien du github](https://github.com/mozilla/webextension-polyfill)
 
 Les extensions Web fonctionnent différemment selon les navigateurs, et certaines API spécifiques comme chrome.runtime ne sont pas directement compatibles avec Firefox.
 
@@ -95,6 +95,6 @@ Nous aimerions à l’avenir pouvoir bloquer les intégrations d’IA sur les si
 
 Évidemment, nous sommes également constamment à la recherche d’alternatives dans IA à suggérer aux utilisateurs, alors ajouter des astuces est également un de nos objectifs.
 
-# 7 - À propos de nous
+# 7. À propos de nous
 
 Enfin, pour vous parler de nous : nous sommes un groupe d'étudiants de première, deuxièmes et troisièmes années au BUT MMI de l'université bordeaux Montaigne, nous réalisons ce projet dans le cadre d'un Workshop. Nous avions deux semaines pour produire tout ce que vous pouvez constater ici, mais également toute la communication autour.
