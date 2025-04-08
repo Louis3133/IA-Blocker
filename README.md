@@ -8,17 +8,15 @@ Comment ? Pour répondre à cette problématique, autant s'attaquer à la racine
 
 Ce projet est entièrement open-source, tout le monde peut y contribuer, pour faciliter un peu la tâche, voici une documentation de ce qui est présent sur le repo, quelques explications, ainsi que nos objectifs.
 
-
 # Sommaire
 
 1. Manifest.json
 2. Shield
 3. Popup
 4. Le CSS
-5. Multi navigateurs
+5. Multi-navigateurs
 6. Objectifs futurs
-7. A propos de nous
-
+7. À propos de nous
 
 # 1 - Manifest.json
 
@@ -28,16 +26,15 @@ Pour citer la doc MDN : “Avec manifest.json, on fournit les différentes méta
 
 Ici, il y à une autre chose d’intéressante, c’est la longue liste d’URL présente dans le “content_scripts” dans “matches”, ici on détecte automatiquement quand on se trouve sur une de ces URL, on remarque notamment le schéma suivant sur celles-ci :
 
-“*://nomDeLaPage.extensionDeDomaine/*’
+“_://nomDeLaPage.extensionDeDomaine/_’
 
-ici, on encadre de nom de la page ainsi que son extension de domaine avec des * pour détecter la page même s' il y à quelque chose d’autre avant ou après l’url. Il est important de changer cela pour des cas particuliers, quand un site qui n’est pas un outil IA à une page spécifique étant l’outil, il se peut qu’il faille alors préciser plus que le nom de la page ainsi que son extension de domaine. Par exemple :
+ici, on encadre de nom de la page ainsi que son extension de domaine avec des \* pour détecter la page même s' il y à quelque chose d’autre avant ou après l’url. Il est important de changer cela pour des cas particuliers, quand un site qui n’est pas un outil IA à une page spécifique étant l’outil, il se peut qu’il faille alors préciser plus que le nom de la page ainsi que son extension de domaine. Par exemple :
 
-“*://nomDeLaPage.extensionDeDomaine/nomDeLaPagePrécise/*’
+“_://nomDeLaPage.extensionDeDomaine/nomDeLaPagePrécise/_’
 
+# 2 - Shield
 
-#  2 -  Shield
-
-On appelle le “Shield” le layout que nous utilisons, c’est l’interface qui se superpose à celle de l’outil d’IA pour bloquer son accès. Pour travailler sur le shiel, ce sont les fichiers suivant qui nous intéressent (en plus du manifest.json) :
+On appelle le “Shield” le layout que nous utilisons, c’est l’interface qui se superpose à celle de l’outil d’IA pour bloquer son accès. Pour travailler sur le shield, ce sont les fichiers suivant qui nous intéressent (en plus du manifest.json) :
 
 shield.js
 shield-content.js
@@ -57,13 +54,11 @@ La fonction setupTimerAndAction() qui prend comme enfant shield permet le foncti
 
 C’est ici que se calcule alors la width de la barre de chargement en fonction du temps passé dans l'intervalle. On y affiche aussi les secondes restantes. Cette fonction prend également en compte le deuxième bouton “quitter la page” qui ferme l’onglet actuel si il est cliqué.
 
-
-#  3 - Popup
+# 3 - Popup
 
 Dans le fichier popup.js, on y met tout ce qui permet le fonctionnement des éléments de la popup.
 
 extension-popup.html contient tout le front de la popup, avec évidemment le fichier css qui l'accompagne extension-popup.css
-
 
 # 4 - Le CSS
 
@@ -77,19 +72,22 @@ Ce qui est très important sur cette extension, c’est de bien cibler correctem
 
 Pour cela, il faut essayer de cibler au maximum avec des successions de classes nos éléments, on n’applique pas du css sur des balises directement et dans des cas extrêmes on cible avec les ID directement (dans les derniers recours on utilise !important, mais il vaut mieux essayer de rester le plus propre possible).
 
+# 5 - Multi-navigateurs
 
-# 5 - Multi navigateurs
+Afin d’assurer une compatibilité maximale entre différents navigateurs (Firefox, Chrome, Edge…), nous utilisons la librairie webextension-polyfill de Mozilla.
 
-Pour permettre au plus grand nombre d’utilisateurs d’utiliser l’extension, nous utilisons Polyfill qui permet d’utiliser des méthodes sur les différents navigateurs. On évite donc d’utiliser des méthodes précises à des navigateurs particuliers comme chrome.runtime ou autre…
+Référence : https://github.com/mozilla/webextension-polyfill
 
+Les extensions Web fonctionnent différemment selon les navigateurs, et certaines API spécifiques comme chrome.runtime ne sont pas directement compatibles avec Firefox.
 
-#  6. Objectifs futurs
+Grâce à webextension-polyfill, nous utilisons une interface unifiée, ce qui nous permet d’assurer que notre extension fonctionne correctement sans avoir à modifier le code pour chaque navigateur.
+
+# 6. Objectifs futurs
 
 Nous aimerions à l’avenir pouvoir bloquer les intégrations d’IA sur les sites, nous n’avons pas encore de solution adaptée, nous essayerons d’y répondre mais si vous souhaitez vous joindre à nous dans ces recherches, nous en serions ravis !
 
 Évidemment, nous sommes également constamment à la recherche d’alternatives dans IA à suggérer aux utilisateurs, alors ajouter des astuces est également un de nos objectifs.
 
-
-# 7 - A propos de nous
+# 7 - À propos de nous
 
 Enfin, pour vous parler de nous : nous sommes un groupe d'étudiants de première, deuxièmes et troisièmes années au BUT MMI de l'université bordeaux Montaigne, nous réalisons ce projet dans le cadre d'un Workshop. Nous avions deux semaines pour produire tout ce que vous pouvez constater ici, mais également toute la communication autour.
