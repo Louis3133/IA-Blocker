@@ -82,6 +82,13 @@ Les extensions Web fonctionnent différemment selon les navigateurs, et certaine
 
 Grâce à webextension-polyfill, nous utilisons une interface unifiée, ce qui nous permet d’assurer que notre extension fonctionne correctement sans avoir à modifier le code pour chaque navigateur.
 
+Si vous contribuez à ce projet, vous devez installer cette dépendance avant de commencer :
+
+```
+npm install --save-dev webextension-polyfill
+```
+(Assurez-vous d’avoir Node.js et npm installés sur votre machine avant d’exécuter cette commande.)
+
 # 6. Objectifs futurs
 
 Nous aimerions à l’avenir pouvoir bloquer les intégrations d’IA sur les sites, nous n’avons pas encore de solution adaptée, nous essayerons d’y répondre mais si vous souhaitez vous joindre à nous dans ces recherches, nous en serions ravis !
