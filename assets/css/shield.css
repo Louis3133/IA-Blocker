@@ -2,25 +2,51 @@
 
 .shield {
   align-items: center;
-  background: rgb(255, 255, 255);
   color: rgb(0, 0, 0);
   display: flex;
   flex-direction: column;
   font-family: Arial, sans-serif;
   gap: 15px;
-  height: 100%;
-  left: 0;
+  height: calc(100vh - 100px);
+  left: 50px;
   padding-top: 5%;
   position: fixed;
-  text-align: center;
-  top: 0;
-  width: 100%;
+  top: 50px;
+  width: calc(100vw - 100px);
   z-index: 997;
+  overflow: scroll;
+  overflow-x: hidden;
+  background-image:
+  linear-gradient(140deg, rgba(135,255,233,1) 2%, rgba(234,181,243,1) 12%, rgba(255,255,255,1) 22%),
+  linear-gradient(325deg, rgba(135,255,233,1) 2%, rgba(234,181,243,1) 12%, rgba(255,255,255,1) 22%);
+  border-radius: 10px;
+  box-shadow: 0px 0px 40px 10px rgba(200, 200, 200, 0.4);
+}
+
+body::before {
+  content: "";
+  display: none; /* Caché par défaut */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 996; /* Juste en dessous du z-index de .shield */
+}
+
+/* Quand .shield est présent dans le DOM, afficher le backdrop */
+body:has(.shield)::before {
+  display: block;
 }
 
 .logo-shield-container {
   height: auto;
-  width: 33%;
+  width: 120px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  transform: rotate(10deg);
 }
 
 #logo-shield img {
@@ -38,19 +64,19 @@
 }
 
 .background-bottom {
-  bottom: -10px;
+  bottom: 0;
   position: absolute;
   right: 0;
   z-index: 998;
 }
 
 .shield-content {
-  align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 2vh;
+  gap: 42px;
   position: relative;
   z-index: 999;
+  width: 80%;
 }
 
 .shield button{
@@ -75,6 +101,47 @@
   }
 }
 
+.shield h2 {
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.6px;
+  margin: unset;
+}
+
+.shield h3 {
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: unset;
+}
+
+.shield h4 {
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: unset;
+}
+
+.shield-card-content p{
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: unset !important;
+}
+
 /* Responsive mobile du shield  */
 
 @media (max-width: 480px) {
@@ -89,9 +156,9 @@
   }
 
   .background-top {
-    left: -60%;
+    left: -10%;
     position: absolute;
-    top: -60%;
+    top: -10%;
     z-index: 998;
   }
 
@@ -100,5 +167,23 @@
     position: absolute;
     right: -60%;
     z-index: 998;
+  }
+ }
+
+ @media (max-width: 900px) {
+
+  .background-bottom {
+    display: none;
+  }
+ }
+
+ @media (max-width: 1080px) {
+
+  .logo-placeholder {
+    display: none;
+  }
+
+  .background-bottom {
+    display: none;
   }
  }

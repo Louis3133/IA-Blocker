@@ -6,13 +6,17 @@
 }
 
 .progress-container {
-  background: rgba(203, 245, 249, 0.50);
-  border-radius: 69px;
-  box-shadow: -13px 11px 73.5px 0px rgba(0, 0, 0, 0.25);
-  height: 65px;
-  overflow: hidden;
+  color: #494444;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration: underline !important;
   position: relative;
-  width: 390px;
+  width: 500px;
+  margin-bottom: 150px;
 }
 
 .progress-container-text {
@@ -35,10 +39,6 @@
   height: 100%;
   transition: width 0.1s linear;
   width: 0%;
-}
-
-#unlockButton {
-  color: white;
 }
 
 #unlockButton:disabled {
@@ -66,12 +66,12 @@
   transition: ease-in .5s;
 }
 
-.unlocked .progress-container .progress-container-text {
-  color: rgb(255, 255, 255);
-}
-
 @media (max-width: 480px) {
   .progress-container {
     width: 80vw;
   }
  }
+
+#progress-text {
+  text-decoration: underline;
+}
