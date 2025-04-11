@@ -34,11 +34,11 @@ Pour Firefox :
 
 Allez sur about:debugging#/setup, une fois ici, aller sur l'onglet "Ce firefox", puis cliquer le bouton "charger le module complémentaire temporaire". Aller dans le dossier dézippé précédemment et importer le manifest.json. Et voilà le tour est joué !
 
-# 1 - Manifest.json
+# 1. Manifest.json
 
 Le fichier manifest.json est le fichier central de toute l’extension, sans lui rien ne peut fonctionner. Il contient toutes les informations concernant l’extension : son nom, sa description, ses permissions, les actions qu’elle réalise.
 
-Pour citer la doc MDN : “Avec manifest.json, on fournit les différentes métadonnées simples de l'extension, comme le nom et la version. On peut également y définir certains aspects des fonctionnalités de l'extension (tels que les scripts d'arrière-plan, les scripts de contenu et les actions du navigateur).” Pour plus d’informations, la doc MDN est complète : https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions/manifest.json
+Pour citer la doc MDN : “Avec manifest.json, on fournit les différentes métadonnées simples de l'extension, comme le nom et la version. On peut également y définir certains aspects des fonctionnalités de l'extension (tels que les scripts d'arrière-plan, les scripts de contenu et les actions du navigateur).” Pour plus d’informations, la doc MDN est complète : [Lien de la doc MDN](https://developer.mozilla.org/fr/docs/Mozilla/Add-ons/WebExtensions/manifest.json)
 
 Ici, il y a une autre chose d’intéressante, c’est la longue liste d’URL présente dans le “content_scripts” dans “matches”, ici, on détecte automatiquement quand on se trouve sur une de ces URL, on remarque notamment le schéma suivant sur celles-ci :
 
@@ -48,7 +48,7 @@ Ici, on encadre de nom de la page ainsi que son extension de domaine avec des \*
 
 “_://nomDeLaPage.extensionDeDomaine/nomDeLaPagePrécise/_’
 
-# 2 - Shield
+# 2. Shield
 
 On appelle le “Shield” le layout que nous utilisons, c’est l’interface qui se superpose à celle de l’outil d’IA pour bloquer son accès. Pour travailler sur le fonctionnement en lui-même du shield, ce sont les fichiers suivant qui nous intéressent (en plus du manifest.json) :
 
@@ -103,15 +103,22 @@ Le fichier shield-title.css correspond aux styles des titres et sous-titres du s
 
 # 4 - Multi-navigateurs
 
+
 Afin d’assurer une compatibilité maximale entre différents navigateurs (Firefox, Chrome, Edge…), nous utilisons la librairie webextension-polyfill de Mozilla.
 
-Référence : https://github.com/mozilla/webextension-polyfill
+Référence : [Lien du github](https://github.com/mozilla/webextension-polyfill)
 
 Les extensions Web fonctionnent différemment selon les navigateurs, et certaines API spécifiques comme chrome.runtime ne sont pas directement compatibles avec Firefox.
 
 Grâce à webextension-polyfill, nous utilisons une interface unifiée, ce qui nous permet d’assurer que notre extension fonctionne correctement sans avoir à modifier le code pour chaque navigateur.
 
 # 5. Objectifs futurs
+Si vous contribuez à ce projet, vous devez installer cette dépendance avant de commencer :
+
+```
+npm install --save-dev webextension-polyfill
+```
+(Assurez-vous d’avoir Node.js et npm installés sur votre machine avant d’exécuter cette commande.)
 
 Nous aimerions à l’avenir pouvoir bloquer les intégrations d’IA sur les sites, nous n’avons pas encore de solution adaptée, nous essayerons d’y répondre mais si vous souhaitez vous joindre à nous dans ces recherches, nous en serions ravis !
 
