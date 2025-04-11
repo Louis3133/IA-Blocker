@@ -17,8 +17,6 @@
       .then((data) => {
         shield.innerHTML = data;
         document.body.appendChild(shield);
-        document.documentElement.style.overflow = "hidden";
-
         const logoPlaceholder = shield.querySelector(".logo-placeholder");
         if (logoPlaceholder) {
           const img = document.createElement("img");

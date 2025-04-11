@@ -1,0 +1,176 @@
+.shield-cards-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+nav {
+  display: none !important;
+}
+
+.shield-card-section-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px 20px;
+}
+
+@media (max-width: 1150px) {
+  .shield-card-section-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 921px) {
+  .shield-card-section-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+
+.card-content-hidden {
+  display: none;
+}
+
+.shield-card {
+  display: flex;
+  width: 215px;
+  padding: 24px 16px;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  background: #FFF !important;
+  box-shadow: 0px 4px 11.2px -5px rgba(0, 0, 0, 0.25);
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: left;
+  flex-direction: row;
+  gap: 6px;
+  cursor: pointer;
+  transition: ease-in-out 0.1s;
+}
+
+.shield-card:hover {
+  border: 2px solid #B225B0;
+}
+
+.shield-card p{
+  margin: unset;
+  max-width: 145px;
+}
+
+.shield-card svg{
+  height: 24px;
+  width: 24px;
+}
+
+.shield-card-active {
+  border: 2px solid #B225B0;
+}
+
+.shield-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.shield-card-content-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+
+}
+.shield-card-alternative {
+  border-radius: 14.501px;
+  background: #FFF;
+  box-shadow: 0px 1.933px 15.226px -7.251px rgba(0, 0, 0, 0.25);
+  display: flex;
+  width: 195px;
+  height: 116px;
+  padding: 16px 18px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  flex-shrink: 0;
+  text-decoration: none;
+  position: relative;
+}
+
+.shield-card-alternative-plus {
+  justify-content: center;
+}
+
+.shield-link-arrow {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.shield-card-content-title-underline {
+  position: relative;
+}
+
+.shield-card-content-title-underline::after {
+  content: "";
+  width: 100%;
+  background-color: 2.646px solid #72E2F9;
+  height: 2px;
+  display: flex;
+}
+
+.shield-card-title {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  align-items: center;
+}
+
+.shield-card-plus {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+}
+
+.shield-card-plus svg{
+  height: 15px;
+  width: 15px;
+}
+
+.shield-card-title svg{
+  height: 24px;
+  width: 24px;
+}
+
+.shield-card-link {
+  font-weight: bold;
+  text-decoration: underline;
+  color: black;
+}
+
+@media (max-width: 628px) {
+  .shield-card-section-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .shield-card {
+    width: 100%;
+  }
+
+  .shield-card p{
+    width: auto;
+    max-width: unset;
+  }
+
+  .shield-card-title {
+    gap: 24px;
+  }
+}

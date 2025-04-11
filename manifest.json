@@ -9,12 +9,10 @@
   "incognito": "spanning",
 
   "icons": {
-    "16": "/assets/images/logo-little.png",
-    "48": "/assets/images/logo-big.png",
-    "128": "/assets/images/logo-big.png"
+    "16": "assets/images/logo-little.png",
+    "48": "assets/images/logo-big.png",
+    "128": "assets/images/logo-big.png"
   },
-
-  "permissions": ["activeTab"],
 
   "content_scripts": [
     {
@@ -137,17 +135,18 @@
         "*://magnific.ai/*"
       ],
       "js": [
-        "/assets/js/shield.js",
-        "/assets/js/shield-title.js",
-        "/assets/js/shield-hints.js",
-        "/assets/js/shield-timer.js"
+        "assets/js/shield.js",
+        "assets/js/shield-title.js",
+        "assets/js/shield-timer.js",
+        "assets/js/shield-cards.js"
       ],
       "css": [
-        "/assets/css/shield.css",
-        "/assets/css/shield-title.css",
-        "/assets/css/shield-hints.css",
-        "/assets/css/shield-button.css"
+        "assets/css/shield.css",
+        "assets/css/shield-title.css",
+        "assets/css/shield-button.css",
+         "assets/css/shield-cards.css"
       ],
+      "run_at": "document_end",
       "all_frames": true
     }
   ],
@@ -155,8 +154,8 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "/shield.html",
-        "/assets/images/logo-shield.svg"
+        "shield.html",
+        "assets/images/logo-shield.svg"
       ],
       "matches": ["<all_urls>"]
     }
