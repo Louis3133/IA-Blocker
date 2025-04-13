@@ -4,8 +4,8 @@
   "name": "Axi - Bloqueur d'outil IA",
   "short_name": "Axi",
   "description": "Axi est une extension qui permet de bloquer les outils d'IA pour réduire leur utilisation progressivement.",
-  "version": "1.0",
-  "homepage_url": "https://github.com/Louis3133/IA-Blocker?tab=readme-ov-file",
+  "version": "1.1",
+  "homepage_url": "https://axi.mmibordeaux.com/",
   "incognito": "spanning",
 
   "icons": {
