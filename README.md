@@ -6,7 +6,7 @@ Pourquoi ? Pour des raisons écologiques et éthiques, s'éduquer à ce qu'est l
 
 Comment ? Pour répondre à cette problématique, autant s'attaquer à la racine du problème et bloquer les IA, nous les répertorions sous forme de liste, une fois l'URL détecté alors nous affichons un layout au-dessus du body qui bloque alors toute possibilité à l'utilisateur d'utiliser l'IA. Nous n'excluons pas les cas d'urgences, ainsi, on permet après un certain temps de réflexion de supprimer le layout et d'accéder à l'IA, nous ne sommes pas dans une optique de frustration de l'utilisateur, mais de prise de conscience. On propose par ailleurs des outils alternatifs pour effectuer des tâches sans IA, ou alors avec des IA spécialisées.
 
-Pour consulter nos articles et nos catégories. Nous vous invitons à visiter le site suivant :
+Pour consulter nos articles et nos catégories. Nous vous invitons à visiter le site suivant : [Lien de notre site](https://axi.mmibordeaux.com/)
 
 Ce projet est entièrement open-source, tout le monde peut y contribuer, pour faciliter un peu la tâche, voici une documentation de ce qui est présent sur le repo, quelques explications, ainsi que nos objectifs.
 
